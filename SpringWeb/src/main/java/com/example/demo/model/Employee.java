@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+
 //jpa entities and annotations
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
