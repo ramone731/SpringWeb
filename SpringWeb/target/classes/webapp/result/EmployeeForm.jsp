@@ -1,29 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-<%-- Might be key problem--%>
-         pageEncoding="ISO-8859-1"%>  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Employee Data</title>
+    <title>Employee Form</title>
 </head>
 <body>
-<table>
-    <%--Employee: id,Name,Salary--%>
-    <tr>
-        <th>Employee id </th>
-        <th>Employee Name</th>
-        <th>Salary</th>
-    </tr>
-    <%--Creates a table to display; Employee: id,name,salary--%>
-    <c:forEach var="data" items="${elist}">
+<%--@elvariable id="eobj" type="com"--%>
+<form:form action="saveData" modelAttribute="eobj">
+    <table>
         <tr>
-            <td><c:out value="${data.empid }"/></td>
-            <td><c:out value="${data.empname }"/></td>
-            <td><c:out value="${data.salary }"/></td>
+            <td>Employee id </td>
+            <td><form:input path="empid"/></td>
         </tr>
-    </c:forEach>
-</table>
+        <tr>
+            <td>Employee name</td>
+            <td><form:input path="empname"/></td>
+        </tr>
+        <tr>
+            <Td>Salary</Td>
+            <td><form:input path="salary"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Save Data"/>
+    </table>
+</form:form>
 </body>
 </html>
